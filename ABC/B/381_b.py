@@ -1,12 +1,14 @@
-# s = str(input())
-# ans = "No"
-# if len(s) % 2 == 0: # 長さが偶数
-#     for i in range(int(len(s) / 2)):
-#         if s[2 * i] == s[2 * i + 1]: # 連続する2文字が同一
-#             if len(set(s)) == int(len(s) / 2): # 各文字2回ずつ出現
-#                 ans = "Yes"
+'''s = str(input())
+ans = "No"
+if len(s) % 2 == 0: # 長さが偶数
+    for i in range(int(len(s) / 2)):
+        if s[2 * i] == s[2 * i + 1]: # 連続する2文字が同一
+            if len(set(s)) == int(len(s) / 2): # 各文字2回ずつ出現
+                ans = "Yes"
 
-# print(ans)
+print(ans)'''
+
+# 上記のコード5行目はあるiで条件を満たせばans = "Yes"になるのでaacbbcなどでも通ってしまう！
 
 s = str(input())
 # 長さが偶数か
