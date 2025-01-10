@@ -13,3 +13,5 @@ for i in range(Q):
         print(d + trash_list[t - 1][1] - d % trash_list[t - 1][0])
     elif d % trash_list[t - 1][0] > trash_list[t - 1][1]: # 現在のあまりがrより大きい場合
         print(d - d % trash_list[t - 1][0] + trash_list[t - 1][1] + trash_list[t - 1][0])
+
+# 無理やりすぎる
