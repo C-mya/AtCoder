@@ -1,33 +1,21 @@
-# import math
-# N = int(input())
-# A = list(map(int, input().split(" ")))
+N = int(input())
+A = list(map(int, input().split(" ")))
 
-# flag = True
-# ans = "No"
+# if len(A) % 2 == 1:
+#     if A[0] * A[-1] == A[len(A) // 2] ** 2:
+#         print("Yes")
+#     else:
+#         print("No")
+# elif len(A) % 2 == 0:
+#     if A[0] * A[-1] == A[1] * A[-2]:
+#         print("Yes")
+flag = True
+for i in range(N - 2):
+    if A[i] * A[i + 2] != A[i + 1] * A[i + 1]:
+        flag = False
 
-# for i in range(N - 2):
-#     while math.inclose(A[i + 1] / A[i], A[i + 2] / A[i + 1]):
-#         ans = "Yes"
-
-# print(ans)
-
-
-# N = int(input())
-# A = list(map(int, input().split(" ")))
-
-# flag = True
-# ans = "Yes"
-
-
-if len(A) == 1:
+if flag:
+    print("Yes")
+else:
     print("No")
-    exit()
- 
-for i in range(len(A) - 2):
-    if not A[i + 1] / A[i] == A[i + 2] / A[i + 1]:
-        ans = "No"
-        break
-
-print(ans)
-
-if 
+    
