@@ -1,20 +1,26 @@
-N, Q = list(map(int, input().split(" ")))
-N_list = [1] * N
-# 鳩Pを巣Hに
-# 鳩の識別、何？
-for i in range(Q):
-    query = list(map(int, input().split(" ")))
-    
-    if query[0] == 2:
-        count = 0
-        for i in range(N):       
-            if N_list[i] >= 2:
-                count += 1
-        print(count)
-    else:
-        if N_list[query[1] - 1] != 0:
-            N_list[query[1] - 1] = N_list[query[1] - 1] - 1
-            N_list[query[2] - 1] = N_list[query[2] - 1] + 1
+N, Q = list(map(int, input().split()))
 
-    print(N_list)
-if
+house = {}
+pigeon = {}
+for i in range(1, N + 1):
+    house[i] = [i]
+    pigeon[i] = i
+
+many_pigepn_house = set()
+
+for i in range(Q): # Q個のクエリ
+    query = list(map(int, input().split()))
+    if query == [2]: # valueが複数ある巣の数を出力
+        print(len(many_pigepn_house))
+
+    else:
+        P = query[1] # pigeon
+        H = query[2] # house
+        house[pigeon[P]].remove(P) # 鳩の取り出し
+        if pigeon[P] in many_pigepn_house and len(house[pigeon[P]]) <= 1: ###
+            many_pigepn_house.discard(pigeon[P])
+        pigeon[P] = H # 鳩の巣移動
+        house[H] += [P] # 鳩の移動
+        if len(house[H]) > 1:
+            many_pigepn_house.add(H)
+
