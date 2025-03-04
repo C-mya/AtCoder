@@ -16,8 +16,8 @@ for i in range(Q): # Q個のクエリ
     else:
         P = query[1] # pigeon
         H = query[2] # house
-        house[pigeon[P]].remove(P) # 鳩の取り出し
-        if pigeon[P] in many_pigepn_house and len(house[pigeon[P]]) <= 1: ###
+        house[pigeon[P]].remove(P) # 鳩の取り出し ### listなので遅い、setにすることでO(1)にできる
+        if pigeon[P] in many_pigepn_house and len(house[pigeon[P]]) <= 1: ### setにすることでO(1)
             many_pigepn_house.discard(pigeon[P])
         pigeon[P] = H # 鳩の巣移動
         house[H] += [P] # 鳩の移動
